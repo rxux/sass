@@ -1,0 +1,23 @@
+- name: Rexel Main
+  shortname: main
+  url: http://rxux.github.io/sass.main/
+
+- name: Hagemeyer
+  shortname: hagemeyer
+  url: http://rxux.github.io/sass.hagemeyer/
+
+- name: Denman's
+  shortname: denmans
+  url: http://rxux.github.io/sass.denmans/
+
+- name: Regro
+  shortname: regro
+  url: http://rxux.github.io/sass.regro/
+
+- name: Selga
+  shortname: selga
+  url: http://rxux.github.io/sass.selga/
+
+- name: Schacke
+  shortname: schacke
+  url: http://rxux.github.io/sass.schacke/
