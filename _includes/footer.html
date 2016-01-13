@@ -2,3 +2,34 @@
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+	$('.brand').each(function() {
+		$(this)
+	})
+	var color = '';
+	$('.brand.lighten').each(function() {
+	    var x = $(this).css('backgroundColor');
+	    hexc(x);
+	    $('.small.lighten').each(function() {
+	    	$(this).html(color);
+	    });
+	});
+
+	$('.brand.darken').each(function() {
+	    var x = $(this).css('backgroundColor');
+	    hexc(x);
+	    $('.small.darken').each(function() {
+	    	$(this).html(color);
+	    });
+	});
+
+	function hexc(colorval) {
+	    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	    delete(parts[0]);
+	    for (var i = 1; i <= 3; ++i) {
+	        parts[i] = parseInt(parts[i]).toString(16);
+	        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+	    }
+	    color = '#' + parts.join('');
+	}
+</script>

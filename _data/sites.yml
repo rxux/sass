@@ -1,23 +1,48 @@
-- name: Rexel Main
-  shortname: main
-  url: http://rxux.github.io/sass.main/
+rexel:
+  name: Rexel
+  shortname: rexel
+  url: /sass/
+  primarycolor: '#0a287d'
+  secondarycolor: '#ee7803'
 
-- name: Hagemeyer
+hagemeyer:
+  name: Hagemeyer
   shortname: hagemeyer
-  url: http://rxux.github.io/sass.hagemeyer/
+  url: /sass/hagemeyer/
+  primarycolor: '#0068b4'
+  secondarycolor: '#f7941d'
 
-- name: Denman's
+denmans:
+  name: Denmans
   shortname: denmans
-  url: http://rxux.github.io/sass.denmans/
+  url: /sass/denmans/
+  primarycolor: '#379e32'
+  secondarycolor: '#379e32'
 
-- name: Regro
+regro:
+  name: Regro
   shortname: regro
-  url: http://rxux.github.io/sass.regro/
+  url: /sass/regro/
+  primarycolor: '#cf000a'
+  secondarycolor: '#cf000a'
 
-- name: Selga
+selga:
+  name: Selga
   shortname: selga
-  url: http://rxux.github.io/sass.selga/
+  url: /sass/selga/
+  primarycolor: '#09795c'
+  secondarycolor: '#1fb6bc'
 
-- name: Schacke
+schacke:
+  name: Schacke
   shortname: schacke
-  url: http://rxux.github.io/sass.schacke/
+  url: /sass/schacke/
+  primarycolor: '#0065a8'
+  secondarycolor: '#03ad6a'
+
+storel:
+  name: Storel
+  shortname: storel
+  url: /sass/storel/
+  primarycolor: '#f7941d'
+  secondarycolor: '#f7941d'

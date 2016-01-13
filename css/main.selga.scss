@@ -1,0 +1,17 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+//Variables
+$brand-primary:         #09795c !default;
+$brand-secondary:  		#1fb6bc !default;
+
+// 'open sans' & material icon font from google fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,300italic,600italic);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "bootstrap"
+;

@@ -6,10 +6,10 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	      <ul class="nav navbar-nav">
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ site.title }} <span class="i-wrap"><i class="material-icons">keyboard_arrow_down</i></span></a>
+	          <a href="#" class="dropdown-toggle navbar-brand text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ site.title }} - {{ page.title }} <span class="i-wrap"><i class="material-icons">keyboard_arrow_down</i></span></a>
 	          <ul class="dropdown-menu">
 	          	{% for site in site.data.sites %}
-	            	<li><a href="{{ site.url }}">{{ site.name }}</a></li>
+	          		<li><a href="{{ site[1].url }}">{{ site[1].name }}</a></li>
 	            {% endfor %}
 	          </ul>
 	        </li>
