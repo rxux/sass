@@ -15,7 +15,7 @@ header .i-wrap {display: inline-block; height: 18px;}
 header .i-wrap i {position: absolute;}
 
 
-.cart {position:relative; display: inline-block;}
+.cart {position:relative; display: inline-block; margin-top: 10px;}
 .cart i {font-size: 2em;}
 .counter {
     padding: 0 5px;

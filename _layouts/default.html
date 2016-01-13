@@ -10,39 +10,8 @@
     <div class="page-content">
       <div class="container-fluid">
 
-        <!-- BRAND COLORS -->
-        <div class="row">
-            <!-- LIGHT -->
-            <div class="col-xs-3">
-                <div class="well brand lighten">
-                    <span class="small lighten"></span>
-                </div>
-            </div>
-            <!-- PRIMARY -->
-            <div class="col-xs-3">
-                <div class="well brand">
-                  <span class="small">
-                    {{ site.data.sites[page.shortname].primarycolor }}
-                  </span>
-                </div>
-            </div>
-            <!-- DARK -->
-            <div class="col-xs-3">
-                <div class="well brand darken">
-                    <span class="small darken"></span>
-                </div>
-            </div>
-            <!-- GRADIENT -->
-            <div class="col-xs-3">
-                <div class="well brand gradient">
-                    <span class="small pull-left">{{ site.data.sites[page.shortname].primarycolor }}</span>
-                    <span class="text-center" style="display:inline-block; height:15px; width:15px; position:relative;">
-                        <i class="material-icons" style="position:absolute; top:-3px; left:-2px;">&#xE915;</i>
-                    </span>
-                    <span class="small darken pull-right"></span>
-                </div>
-            </div>
-        </div>
+        {% include colorscales.html %}
+        {% include buttons.html %}
 
         {{ content }}
       </div>

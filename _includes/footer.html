@@ -23,6 +23,23 @@
 	    });
 	});
 
+	var color = '';
+	$('.brand-2.lighten-2').each(function() {
+	    var x = $(this).css('backgroundColor');
+	    hexc(x);
+	    $('.small.lighten-2').each(function() {
+	    	$(this).html(color);
+	    });
+	});
+
+	$('.brand-2.darken-2').each(function() {
+	    var x = $(this).css('backgroundColor');
+	    hexc(x);
+	    $('.small.darken-2').each(function() {
+	    	$(this).html(color);
+	    });
+	});
+
 	function hexc(colorval) {
 	    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
 	    delete(parts[0]);

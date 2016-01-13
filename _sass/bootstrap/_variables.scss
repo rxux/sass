@@ -61,15 +61,15 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 	font-weight:300;
 	letter-spacing:0.025em;
 	
-	&.lighten {
+	&.lighten-2 {
 		background-color: $brand2-lighten !important;
 	}
 	
-	&.darken {
+	&.darken-2 {
 		background-color: $brand2-darken !important;
 	}
 
-	&.gradient {
+	&.gradient-2 {
 		background-color:transparent !important;
 		background: $brand-secondary;
 		background: -moz-linear-gradient(left,  $brand2-lighten 0%,$brand2-darken 100%);
@@ -78,7 +78,7 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$brand2-lighten', endColorstr='$brand2-darken',GradientType=1 );
 	}
 
-	&.gradient-vertical {
+	&.gradient-vertical-2 {
 		background-color:transparent !important;
 		background: $brand-secondary;
 		background: -moz-linear-gradient(top,  $brand2-lighten 0%,$brand2-darken 100%);
