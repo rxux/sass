@@ -4,8 +4,9 @@
 @charset "utf-8";
 
 //Variables
-$brand-primary:         #f7941d !default;
-$brand-secondary:  		#f7941d !default;
+{% include color_vars.scss %}
+$brand-primary:   $brand-storel-primary   !default;
+$brand-secondary: $brand-storel-secondary !default;
 
 // 'open sans' & material icon font from google fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,300italic,600italic);

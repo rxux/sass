@@ -1,3 +1,7 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
 /* ==========================================================================
    KEEP OVERRIDES HERE SO THEY DONT END UP IN THE MAIN SASS FILE
    ========================================================================== */
@@ -11,18 +15,38 @@ body { padding-top: 70px; }
 /* 
    HEADER ONLY
    ========================================================================== */
-header .i-wrap {display: inline-block; height: 18px;}
-header .i-wrap i {position: absolute;}
+
+header {
+  .navbar-brand {
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .i-wrap { 
+    display: inline-block; 
+    height: 18px;
+    
+    i {
+      position: absolute;
+    }
+  }
+}
 
 
-.cart {position:relative; display: inline-block; margin-top: 10px;}
-.cart i {font-size: 2em;}
-.counter {
+.cart {
+  position:relative; 
+  display: inline-block; 
+  margin-top: 10px;
+  
+  i {
+    font-size: 2em;
+  }
+
+  .counter {
     padding: 0 5px;
     right: -14px;
     position: absolute;
     top: 0px;
-    color: #fff;
     font-size: 9px;
     border-radius: 3px;
     cursor: default;
@@ -35,10 +59,44 @@ header .i-wrap i {position: absolute;}
     font-weight: 600;
     line-height: 20px;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  }
 }
 
-.well.brand {
-  border-width: 0;
-  -webkit-box-shadow: none;
+
+.well {
+  webkit-box-shadow: none;
   box-shadow: none;
+  
+  &.brand,
+  &.brand-2 {
+    border-width: 0;
+
+    code {
+      color:#fff;
+      background-color: transparent;
+    }
+  }
 }
+
+.off-canvas-hero {
+  
+  a {
+    color: #fff;
+    
+    h2 {
+      font-weight: 300;
+      font-size:1.5em;
+    }
+
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover,
+    &:active,
+    &.active {
+      color:#fff;
+    }
+  }
+}
+
+

@@ -1,0 +1,4 @@
+{% for site in site.data.sites %}
+	$brand-{{ site[1].shortname }}-primary:   {{ site[1].primarycolor }} !default;
+	$brand-{{ site[1].shortname }}-secondary: {{ site[1].secondarycolor }} !default;
+{% endfor %}
