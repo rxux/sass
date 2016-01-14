@@ -10,6 +10,13 @@
    BODY
    ========================================================================== */
 body { padding-top: 70px; }
+.kp  {padding-right: 0; padding-left: 0;}
+.kpl {padding-left: 0;}
+.kpr {padding-right: 0;}
+
+.pos-rel {position: relative !important;}
+.pos-abs {position: absolute !important;}
+.display-block {display: block !important;}
 
 
 /* 
@@ -96,6 +103,90 @@ header {
     &.active {
       color:#fff;
     }
+  }
+}
+
+.bar {
+  width:960px !important;
+  margin:0 auto;
+  padding:12px;
+
+  input {
+    border-width:0;
+  }
+  
+  i {
+    position: relative;
+    top: 7px;
+    left: -3px;
+  }
+
+  span.i-wrap {
+    float: left;
+    display: inline-block;
+    width:25px;
+    height:36px;
+
+    i {
+      font-size: 2.75em;
+      position: absolute;
+      top:-2px;
+      left: 0;
+    }
+  }
+
+  .search-btn {
+    position: absolute;
+    right: 2px;
+    top: -8px;
+    color: #999;
+  }
+
+  .category-btn {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+
+    .btn-group {
+      display:block;
+      
+      button {
+        padding:7px 0;
+        font-weight: normal;
+        display: block;
+        width:100%;
+        text-align: left;
+    
+        i {
+          position: absolute;
+          right: -11px;
+          left:auto;
+          top: 5px;
+        }
+      }
+    }
+  }
+  .categories-dropdown {
+    top:34px;
+    left: -11px;
+    min-width: 381px;
+  }
+
+  .col-notifications {
+     width: 6.33333%;
+  }
+  .col-myaccount,
+  .col-cart {
+    width: 17.66667%;
+    left: 12px;
+
+    span.display-block {
+      position: absolute;
+      top:-10px;
+      left: 38px;
+    }
+  }
+  .col-cart {
+    left:25px;
   }
 }
 
