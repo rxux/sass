@@ -49,4 +49,11 @@
 	    }
 	    color = '#' + parts.join('');
 	}
+
+	$(document).on('click', '.rx-select', function() {
+		$(this).addClass('checked');
+		$('.rx-select.checked').not(this).each(function(){
+			$(this).removeClass('checked');
+      	  });
+	});
 </script>

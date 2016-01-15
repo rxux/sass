@@ -82,3 +82,9 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 .border-dark {
 	border-color: $brand-darken;
 }
+
+.rx-select {
+	&.checked:before {
+		background: $brand-secondary;
+	}
+}

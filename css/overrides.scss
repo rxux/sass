@@ -71,7 +71,7 @@ header {
 
 
 .well {
-  webkit-box-shadow: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
   
   &.brand,
@@ -232,5 +232,42 @@ header {
     }
   }
 }
+// END LIVE HELP BUTTON
+
+// RADIO BUTTONS
+.rx-select-wrapper {
+
+  label {
+    margin-left: 6px;
+  }
+
+  .rx-select {
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    display: inline-block;
+    border: 2px solid #9E9E9E;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    float: left;
+    position: relative;
+
+    &.checked:before {
+      position: absolute;
+      right: 3px;
+      left: 3px;
+      top: 3px;
+      bottom: 3px;
+      content: "";
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+    }
+  }
+}
+
+
+
 
 
