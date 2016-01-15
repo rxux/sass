@@ -106,6 +106,7 @@ header {
   }
 }
 
+// DESKTOP HEADER BAR
 .bar {
   width:960px !important;
   margin:0 auto;
@@ -187,6 +188,48 @@ header {
   }
   .col-cart {
     left:25px;
+  }
+} 
+// END DESKTOP HEADER BAR
+
+// LIVE HELP BUTTON
+.live-help-wrapper {
+
+  .well {
+    background-color: #fff;
+    height:110px;
+    
+    a {
+      right:-31px;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      height:30px;
+      line-height: 30px;
+      padding: 0 10px;
+      letter-spacing: 0.1em;
+      top:37%;
+      -webkit-border-top-left-radius: 5px;
+      -webkit-border-top-right-radius: 5px;
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-width: 1px;
+      border-style: solid;
+      border-bottom-width: 0px;
+      
+      &:hover,
+      &.hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+        color:#fff;
+      }
+    }
   }
 }
 

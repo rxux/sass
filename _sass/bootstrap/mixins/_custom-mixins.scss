@@ -1,0 +1,84 @@
+//## Brand Primary Colors
+$brand-lighten:  lighten($brand-primary, 7.5%) !default;
+$brand-darken:  darken($brand-primary, 7.5%) !default;
+
+// Background Gradient
+@mixin gradient($start-color: $brand-primary, $end-color: $brand-darken, $start: left, $end: right, $gradient-type: 1) {
+	@if $start == left {
+		$end: right;
+		$gradient-type: 1;
+	} @else if $start == right {
+		$end: left;
+		$gradient-type: 1;
+	} @else if $start == top {
+		$end: bottom;
+		$gradient-type: 0;
+	} @else if $start == bottom {
+		$end: top;
+		$gradient-type: 0;
+	}
+    background-color: $start-color;
+    background-image: -webkit-gradient(linear, $start, $start, from($start-color), to($end-color));
+    background-image: -webkit-linear-gradient($start, $start-color 0%, $end-color 100%);
+    background-image:    -moz-linear-gradient($start, $start-color 0%, $end-color 100%);
+    background-image:     -ms-linear-gradient($start, $start-color 0%, $end-color 100%);
+    background-image:      -o-linear-gradient($start, $start-color 0%, $end-color 100%);
+    background-image:         linear-gradient(to $end, $start-color 0%, $end-color 100%);
+    filter:            progid:DXImageTransform.Microsoft.gradient(start-colorStr='#{$start-color}', end-colorStr='#{$end-color}',GradientType=$gradient-type);
+}
+
+// Brand Gradient
+.brand {
+	background-color: $brand-primary !important;
+	color:#fff;
+	text-align:center;
+	font-weight:300;
+	letter-spacing:0.025em;
+	
+	&.lighten {
+		background-color: $brand-lighten !important;
+	}
+	
+	&.darken {
+		background-color: $brand-darken !important;
+	}
+
+	&.gradient {
+		@include gradient;
+	}
+
+	&.gradient-reverse {
+		@include gradient($brand-darken, $brand-primary);
+	}
+}
+
+// Secondary Brand Gradient
+$brand2-lighten:  lighten($brand-secondary, 7.5%) !default;
+$brand2-darken:  darken($brand-secondary, 7.5%) !default;
+.brand-2 {
+	background-color: $brand-secondary !important;
+	color:#fff;
+	text-align:center;
+	font-weight:300;
+	letter-spacing:0.025em;
+	
+	&.lighten-2 {
+		background-color: $brand2-lighten !important;
+	}
+	
+	&.darken-2 {
+		background-color: $brand2-darken !important;
+	}
+
+	&.gradient-2 {
+		@include gradient($brand2-lighten, $brand2-darken);
+	}
+
+	&.gradient-vertical-2 {
+		@include gradient($brand2-lighten, $brand2-darken,top);
+	}
+}
+
+.border-dark {
+	border-color: $brand-darken;
+}
