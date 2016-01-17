@@ -18,7 +18,6 @@ body { padding-top: 70px; }
 .pos-abs {position: absolute !important;}
 .display-block {display: block !important;}
 
-
 /* 
    HEADER ONLY
    ========================================================================== */
@@ -73,6 +72,7 @@ header {
 .well {
   -webkit-box-shadow: none;
   box-shadow: none;
+  min-height: 115px;
   
   &.brand,
   &.brand-2 {
@@ -265,6 +265,11 @@ header {
       -webkit-border-radius: 50%;
     }
   }
+}
+// END RADIO BUTTONS
+
+.remember-me-label {
+  margin-left: 15px;
 }
 
 
