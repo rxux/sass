@@ -93,6 +93,8 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 	}
 }
 
+
+// BEGIN BOOTSTRAP SWITCH
 .bootstrap-switch {
 	display: inline-block;
 	direction: ltr;
@@ -316,5 +318,84 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 		}
 	}
 }
+// BOOTSTRAP SWITCH
 
+@import "bootstrap-datepicker";
 
+// DATEPICKER 
+.datepicker-wrapper {
+  background-color:#fff !important;
+  padding:0 !important;
+  border-width: 0 !important;
+
+  .datepicker-inline {
+    margin: 0 auto;
+    min-width: 280px;
+    max-width: 398px;
+    border: 1px solid #ccc;
+
+    .table {
+		
+		> tbody,
+		> thead {
+			> tr {
+				> td,
+				> th {
+					border-top-width: 0 !important;
+					border-bottom-width: 0 !important;
+				}
+			}
+		}
+    
+    }
+
+    thead {
+      border-bottom: 1px solid #ccc;
+      display: table-caption;
+      @include gradient(#fff, #f1f1f1, top);
+      
+    }
+
+    .today   {
+      color:#58585a !important;
+      position:relative;
+      z-index: 1;
+      background: #fff !important;
+
+      &:after {
+      	background: #ccc !important;
+      	position: absolute;
+	    top: 10px;
+	    left: 10px;
+	    right: 10px;
+	    bottom: 10px;
+	    content: "";
+	    z-index: -1;
+	    -webkit-border-radius: 50%;
+      	-moz-border-radius: 50%;
+      	border-radius: 50%;
+      }
+    }
+
+    td.active.day {
+      color:#fff !important;
+      position:relative;
+      z-index: 1;
+
+      &:after {
+      	background: $brand-primary !important;
+      	position: absolute;
+	    top: 10px;
+	    left: 10px;
+	    right: 10px;
+	    bottom: 10px;
+	    content: "";
+	    z-index: -1;
+	    -webkit-border-radius: 50%;
+      	-moz-border-radius: 50%;
+      	border-radius: 50%;
+      }
+    }
+  }
+}
+// END DATEPICKER
