@@ -401,8 +401,8 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 // END DATEPICKER
 
 .link-section {
-$blue: #0068b4;
 $normal: #58585a;
+$linkcolor: $link-hover-color !default;
 
 	.well {
 		background-color: #fff;
@@ -415,17 +415,17 @@ $normal: #58585a;
     // GLOBAL HOVER RULES
     &:hover {
       text-decoration:none;
-      color: $blue;
+      color: $linkcolor;
     }
     
     &.list-link {
-      color:$blue;
+      color:$linkcolor;
       &:hover {text-decoration:underline;}
 
       &.mobile {
       	color: $normal;
       	&:hover {
-      		color:$blue;
+      		color:$linkcolor;
       		text-decoration:none;
       	}
       }
@@ -437,12 +437,12 @@ $normal: #58585a;
       color:$normal;
        
       &:hover {
-        color:$blue;
+        color:$linkcolor;
         text-decoration:none;
       }
 
       &.desktop {
-      	color:$blue;
+      	color:$linkcolor;
 
       	&:hover {
       		text-decoration:underline;
@@ -451,7 +451,7 @@ $normal: #58585a;
     }
     
     &.inline-link {
-      color:$blue;
+      color:$linkcolor;
       font-weight:600;
       &:hover {
         text-decoration:underline;

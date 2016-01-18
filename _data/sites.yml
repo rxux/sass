@@ -4,6 +4,7 @@ rexel:
   url: /sass/
   primarycolor: '#0a287d'
   secondarycolor: '#ee7803'
+  linkcolor: blue
 
 hagemeyer:
   name: Hagemeyer
@@ -11,6 +12,7 @@ hagemeyer:
   url: /sass/hagemeyer/
   primarycolor: '#0068b4'
   secondarycolor: '#f7941d'
+  linkcolor: blue
 
 denmans:
   name: Denmans
@@ -18,6 +20,7 @@ denmans:
   url: /sass/denmans/
   primarycolor: '#379e32'
   secondarycolor: '#379e32'
+  linkcolor: blue
 
 regro:
   name: Regro
@@ -25,6 +28,7 @@ regro:
   url: /sass/regro/
   primarycolor: '#cf000a'
   secondarycolor: '#eb1c22'
+  linkcolor: regro
 
 selga:
   name: Selga
@@ -32,6 +36,7 @@ selga:
   url: /sass/selga/
   primarycolor: '#09795c'
   secondarycolor: '#1fb6bc'
+  linkcolor: blue
 
 schacke:
   name: Schacke
@@ -39,6 +44,7 @@ schacke:
   url: /sass/schacke/
   primarycolor: '#0065a8'
   secondarycolor: '#03ad6a'
+  linkcolor: blue
 
 storel:
   name: Storel
@@ -46,3 +52,4 @@ storel:
   url: /sass/storel/
   primarycolor: '#f7941d'
   secondarycolor: '#0068b4'
+  linkcolor: blue
