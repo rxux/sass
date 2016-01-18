@@ -107,6 +107,11 @@ header {
 }
 
 // DESKTOP HEADER BAR
+.well.bar-wrapper {
+  background-color: #fff;
+  border-width: 0;
+}
+
 .bar {
   width:960px !important;
   margin:0 auto;
