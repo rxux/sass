@@ -79,66 +79,44 @@ a.btn {
   overflow: hidden;
   z-index: 0;
   color: #58585a;
- /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+25,f1f1f1+100 */
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 25%, #f1f1f1 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 25%,#f1f1f1 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 25%,#f1f1f1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+  @include gradient(#fff, #f1f1f1, top);
 
   &:hover,
   &:focus,
-  &.focus {
+  &.focus,
+  &.hover,
+  &.active,
+  &:active {
     background: rgba(247,247,247,1);
     color:#58585a;
+  }
 
-    &:after {
-      content:"";
-      position:absolute;
-      top:0;
-      bottom:0;
-      left:0;
-      right:0;
-      z-index: -1;
-      background:rgba(247,247,247,1);
-    }
-  } 
-
-  &:after,
-  &.disabled:after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+25,f1f1f1+100 */
-    background: #ffffff; /* Old browsers */
-    background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 25%, #f1f1f1 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 25%,#f1f1f1 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 25%,#f1f1f1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
-
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    @include gradient(#fff, #f1f1f1, top);
   }
 }
 
 .btn-primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  @include button-variant($btn-primary-color, $btn-primary-bg, $brand-darken);
   font-weight: 300;
-
-  background: $brand-primary;
-  background: -moz-linear-gradient(top,  $brand-primary 0%,$brand-darken 100%);
-  background: -webkit-linear-gradient(top,  $brand-primary 0%,$brand-darken 100%);
-  background: linear-gradient(to bottom,  $brand-primary 0%,$brand-darken 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$brand-primary', endColorstr='$brand-darken',GradientType=0 );
+  @include gradient($brand-primary, $brand-darken, top);
 
 
   &:hover,
   &:focus,
-  &.focus {
-    background-color: lighten($btn-primary-bg, 10%);
+  &.focus,
+  &.hover,
+  &.active,
+  &:active {
+    background: $brand-primary;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    @include gradient($brand-primary, $brand-darken, top);
   }
 }
 

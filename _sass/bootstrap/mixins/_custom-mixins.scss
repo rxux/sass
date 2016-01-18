@@ -421,6 +421,14 @@ $normal: #58585a;
     &.list-link {
       color:$blue;
       &:hover {text-decoration:underline;}
+
+      &.mobile {
+      	color: $normal;
+      	&:hover {
+      		color:$blue;
+      		text-decoration:none;
+      	}
+      }
     }
     
     &.primary-link,
@@ -431,6 +439,14 @@ $normal: #58585a;
       &:hover {
         color:$blue;
         text-decoration:none;
+      }
+
+      &.desktop {
+      	color:$blue;
+
+      	&:hover {
+      		text-decoration:underline;
+      	}
       }
     }
     
