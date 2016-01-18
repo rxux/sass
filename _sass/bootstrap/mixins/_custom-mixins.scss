@@ -399,3 +399,47 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
   }
 }
 // END DATEPICKER
+
+.link-section {
+$blue: #0068b4;
+$normal: #58585a;
+
+	.well {
+		background-color: #fff;
+	}
+	
+	a {
+    // GLOBAL RULES
+    color:$normal;
+    
+    // GLOBAL HOVER RULES
+    &:hover {
+      text-decoration:none;
+      color: $blue;
+    }
+    
+    &.list-link {
+      color:$blue;
+      &:hover {text-decoration:underline;}
+    }
+    
+    &.primary-link,
+    &.btn-link {
+      font-weight:600;
+      color:$normal;
+       
+      &:hover {
+        color:$blue;
+        text-decoration:none;
+      }
+    }
+    
+    &.inline-link {
+      color:$blue;
+      font-weight:600;
+      &:hover {
+        text-decoration:underline;
+      }
+    }
+  }
+}
