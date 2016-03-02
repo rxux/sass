@@ -2,6 +2,9 @@
 $brand-lighten:  lighten($brand-primary, 7.5%) !default;
 $brand-darken:  darken($brand-primary, 7.5%) !default;
 $bar-color: $brand-darken !default;
+$counter-color: $brand-secondary !default;
+$counter-darken: darken($counter-color, 7.5%) !default;
+
 .bar {background-color: $bar-color;}
 
 // Background Gradient
@@ -56,6 +59,10 @@ $bar-color: $brand-darken !default;
 	}
 }
 
+.counter {
+  @include gradient($counter-color, $counter-darken, top);
+}
+
 // Secondary Brand Gradient
 $brand2-lighten:  lighten($brand-secondary, 7.5%) !default;
 $brand2-darken:  darken($brand-secondary, 7.5%) !default;
@@ -91,14 +98,16 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 	border-color: $brand-darken;
 }
 
+$rx-select: $brand-secondary !default;
 .rx-select {
 	&.checked:before {
-		background: $brand-secondary;
+		background: $rx-select;
 	}
 }
 
 
 // BEGIN BOOTSTRAP SWITCH
+$switch-color: $brand-secondary !default;
 .bootstrap-switch {
 	display: inline-block;
 	direction: ltr;
@@ -150,7 +159,7 @@ $brand2-darken:  darken($brand-secondary, 7.5%) !default;
 
 		&.bootstrap-switch-primary,
 		&.bootstrap-switch-primary {
-			background: $brand-secondary;
+			background: $switch-color;
 		}
 		
 		&.bootstrap-switch-info,
