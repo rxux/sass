@@ -98,10 +98,13 @@ a.btn {
   }
 }
 
+$button-color: $brand-primary !default;
+$button-darken: darken($button-color, 7.5%) !default;
+
 .btn-primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg, $brand-darken);
+  @include button-variant($btn-primary-color, $btn-primary-bg, $button-darken);
   font-weight: 300;
-  @include gradient($brand-primary, $brand-darken, top);
+  @include gradient($button-color, $button-darken, top);
 
 
   &:hover,
@@ -110,13 +113,13 @@ a.btn {
   &.hover,
   &.active,
   &:active {
-    background: $brand-primary;
+    background: $button-color;
   }
 
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    @include gradient($brand-primary, $brand-darken, top);
+    @include gradient($button-color, $button-darken, top);
   }
 }
 

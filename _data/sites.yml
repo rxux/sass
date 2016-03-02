@@ -27,7 +27,7 @@ regro:
   shortname: regro
   url: /sass/regro/
   primarycolor: '#cf000a'
-  secondarycolor: '#eb1c22'
+  secondarycolor: '#666666'
   linkcolor: regro
 
 selga:
@@ -35,7 +35,7 @@ selga:
   shortname: selga
   url: /sass/selga/
   primarycolor: '#09795c'
-  secondarycolor: '#1fb6bc'
+  secondarycolor: '#0096b4'
   linkcolor: blue
 
 schacke:
@@ -50,6 +50,6 @@ storel:
   name: Storel
   shortname: storel
   url: /sass/storel/
-  primarycolor: '#f7941d'
-  secondarycolor: '#0068b4'
+  primarycolor: '#ef7d00'
+  secondarycolor: '#0096b4'
   linkcolor: blue
