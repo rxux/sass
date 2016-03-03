@@ -472,3 +472,8 @@ $linkcolor: $link-hover-color !default;
     }
   }
 }
+
+$dots-color: $brand-primary !default;
+.dots-wrapper ul.dots li.active {
+  background: $dots-color !important;
+}

@@ -66,5 +66,35 @@
 		startDate: "+2d"
 	});
 
+
+	// DOTS
+	var dots;
+
+	function startInterval() {
+		dots = setInterval(function() {
+			var _active = $('.active');
+
+			if (_active.next('li').length) {
+				_active.removeClass('active').next('li').addClass('active');
+			} else {
+				_active.removeClass('active');
+				$('.dots').find('li').first().addClass('active');
+			}
+
+		},2000);
+	}
+
+	startInterval();
+
+	$('.dots > li').click(function() {
+		clearInterval(dots);
+		$('.dots > li ').each(function() {
+			$(this).removeClass('active');
+		});
+		$(this).addClass('active');
+		startInterval();
+	});
+	// END DOTS
+
 	
 </script>
