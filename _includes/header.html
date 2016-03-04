@@ -9,8 +9,20 @@
 	          <a href="#" class="dropdown-toggle navbar-brand text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ site.title }} - {{ page.title }} <span class="i-wrap"><i class="material-icons">keyboard_arrow_down</i></span></a>
 	          <ul class="dropdown-menu">
 	          	{% for site in site.data.sites %}
-	          		<li><a href="{{ site[1].url }}">{{ site[1].name }}</a></li>
+				  	{% if site[1].active == 'active' %}
+	          			<li><a href="{{ site[1].url }}">{{ site[1].name }}</a></li>
+				  	{% endif %}
 	            {% endfor %}
+
+				  <li role="separator" class="divider"></li>
+				  <li class="dropdown-header">Coming Soon</li>
+				  {% for site in site.data.sites %}
+
+				  {% if site[1].active != 'active' %}
+				  <li class="disabled"><a style="pointer-events: none" href="{{ site[1].url }}">{{ site[1].name
+					  }}</a></li>
+				  {% endif %}
+				  {% endfor %}
 	          </ul>
 	        </li>
 	      </ul>

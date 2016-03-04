@@ -5,6 +5,7 @@ rexel:
   primarycolor: '#0a287d'
   secondarycolor: '#ee7803'
   linkcolor: blue
+  active: active
 
 hagemeyer:
   name: Hagemeyer
@@ -13,14 +14,8 @@ hagemeyer:
   primarycolor: '#0068b4'
   secondarycolor: '#f7941d'
   linkcolor: blue
+  active: active
 
-denmans:
-  name: Denmans
-  shortname: denmans
-  url: /sass/denmans/
-  primarycolor: '#379e32'
-  secondarycolor: '#379e32'
-  linkcolor: blue
 
 regro:
   name: Regro
@@ -29,6 +24,7 @@ regro:
   primarycolor: '#cf000a'
   secondarycolor: '#58585a'
   linkcolor: regro
+  active: active
 
 selga:
   name: Selga
@@ -37,6 +33,7 @@ selga:
   primarycolor: '#09795c'
   secondarycolor: '#0096b4'
   linkcolor: blue
+  active: active
 
 schacke:
   name: Schacke
@@ -45,6 +42,7 @@ schacke:
   primarycolor: '#0065a8'
   secondarycolor: '#03ad6a'
   linkcolor: blue
+  active: active
 
 storel:
   name: Storel
@@ -53,3 +51,22 @@ storel:
   primarycolor: '#ef7d00'
   secondarycolor: '#0096b4'
   linkcolor: blue
+  active: active
+
+denmans:
+  name: Denmans
+  shortname: denmans
+  url: /sass/denmans/
+  primarycolor: '#379e32'
+  secondarycolor: '#379e32'
+  linkcolor: blue
+  active: inactive
+
+gexpro:
+  name: Gexpro
+  shortname: gexpro
+  url: /sass/gexpro/
+  primarycolor: '#000000'
+  secondarycolor: '#000000'
+  linkcolor: blue
+  active: inactive
