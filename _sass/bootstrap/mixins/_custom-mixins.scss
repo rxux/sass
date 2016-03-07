@@ -29,7 +29,8 @@ $counter-darken: darken($counter-color, 7.5%) !default;
     background-image:     -ms-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
     background-image:      -o-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
     background-image:         linear-gradient(to $end, $start-color 0%, $start-color 25%, $end-color 100%);
-    filter:            progid:DXImageTransform.Microsoft.gradient(start-colorStr='#{$start-color}', end-colorStr='#{$end-color}',GradientType=$gradient-type);
+    filter: progid:DXImageTransform.Microsoft.gradient(start-colorStr='#{$start-color}', end-colorStr='#{$end-color}',GradientType=#{$gradient-type});
+	background: $gradient-type;
 }
 
 
