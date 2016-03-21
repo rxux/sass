@@ -2,7 +2,7 @@ rexel:
   name: Rexel
   shortname: rexel
   url: /sass/
-  primarycolor: '#0a287d'
+  primarycolor: '#2a3e87'
   secondarycolor: '#ee7803'
   linkcolor: blue
   active: active

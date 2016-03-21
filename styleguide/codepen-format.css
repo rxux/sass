@@ -1,0 +1,5 @@
+/* This is for formatting of codepen snippets without needing css to be displayed within the css/scss panel */
+
+body {
+    padding:30px 15px;
+}

@@ -40,7 +40,7 @@
   &.active {
     outline: 0;
     background-image: none;
-    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+
   }
 
   &.disabled,
@@ -66,83 +66,48 @@ a.btn {
 // --------------------------------------------------
 
 .btn-default, .btn-muted {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
-
-  &:hover {
-    background-color: #f5f5f5;
-  }
+  @include muted-button-variant($btn-default-bg);
 }
 
 .btn-white, .btn-secondary {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-  color: #58585a;
-  @include gradient(#fff, #f1f1f1, top);
-
-  &:hover,
-  &:focus,
-  &.focus,
-  &.hover,
-  &.active,
-  &:active {
-    background: rgba(247,247,247,1);
-    color:#58585a;
-  }
-
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    @include gradient(#fff, #f1f1f1, top);
-  }
+  @include white-button-variant($btn-default-bg);
 }
 
-$button-color: $brand-primary !default;
-$button-darken: darken($button-color, 7.5%) !default;
-
-.btn-primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg, $button-darken);
-  font-weight: 300;
-  @include gradient($button-color, $button-darken, top);
-
-
-  &:hover,
-  &:focus,
-  &.focus,
-  &.hover,
-  &.active,
-  &:active {
-    background: $button-color;
-  }
-
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    @include gradient($button-color, $button-darken, top);
+$profiles: (
+  rexel: #2a3e87,
+  hagemeyer: #0068b4,
+  selga: #09795c,
+  regro: #cf000a,
+  storel: #ef7d00,
+  schacke: #0065a8,
+  denmans: #379e32
+);
+@each $profile, $bgcolor in $profiles {
+  .btn-primary {
+    &.#{$profile} {
+      $button-color: $bgcolor !default;
+      $button-darken: darken($bgcolor, 7.5%) !default;
+      @include primary-button-variant($btn-primary-color, $button-color, $button-darken);
+    }
   }
 }
 
 
 // Success appears as green
 .btn-success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-  font-weight: 300;
+  @include indicator-button-variant($btn-success-color, $btn-success-bg);
 }
 // Info appears as blue-green
 .btn-info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-  font-weight: 300;
+  @include indicator-button-variant($btn-info-color, $btn-info-bg);
 }
 // Warning appears as orange
 .btn-warning {
-  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-  font-weight: 300;
+  @include indicator-button-variant($btn-warning-color, $btn-warning-bg);
 }
 // Danger and error appear as red
 .btn-danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
-  font-weight: 300;
+  @include indicator-button-variant($btn-danger-color, $btn-danger-bg);
 }
 
 
