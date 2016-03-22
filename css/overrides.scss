@@ -114,6 +114,16 @@ header {
 .well.bar-wrapper {
   background-color: #fff;
   border-width: 0;
+  width:960px;
+  margin:0 auto;
+}
+
+img.logo {
+  max-width:200px;
+  display:block;
+  text-align:left;
+  margin-left:3px;
+  margin-bottom:15px;
 }
 
 .bar {
