@@ -73,18 +73,18 @@ a.btn {
   @include white-button-variant($btn-default-bg);
 }
 
-$profiles: (
-  rexel: #2a3e87,
+$profilesBtn: (
+  rexel: #334ba4,
   hagemeyer: #0068b4,
-  selga: #09795c,
+  selga: #0c9d77,
   regro: #cf000a,
-  storel: #ef7d00,
+  storel: #0096b4,
   schacke: #0065a8,
   denmans: #379e32
 );
-@each $profile, $bgcolor in $profiles {
-  .btn-primary {
-    &.#{$profile} {
+@each $profile, $bgcolor in $profilesBtn {
+  ##{$profile} {
+    .btn-primary {
       $button-color: $bgcolor !default;
       $button-darken: darken($bgcolor, 7.5%) !default;
       @include primary-button-variant($btn-primary-color, $button-color, $button-darken);

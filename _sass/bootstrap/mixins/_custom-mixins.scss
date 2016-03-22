@@ -34,30 +34,52 @@ $counter-darken: darken($counter-color, 7.5%) !default;
 
 
 
-// Brand Gradient
-.brand {
-	background-color: $brand-primary !important;
-	color:#fff;
-	text-align:center;
-	font-weight:300;
-	letter-spacing:0.025em;
-	
-	&.lighten {
-		background-color: $brand-lighten !important;
-	}
-	
-	&.darken {
-		background-color: $brand-darken !important;
-	}
+// Brands
+$profilesMain: (
+	rexel: #2a3e87,
+	hagemeyer: #0068b4,
+	selga: #09795c,
+	regro: #cf000a,
+	storel: #ef7d00,
+	schacke: #0065a8,
+	denmans: #379e32
+);
+@each $profile, $bgcolor in $profilesMain {
+	##{$profile} {
+		.brand {
+			$bgDark: darken($bgcolor, 7.5%) !default;
+			$bgLight: lighten($bgcolor, 7.5%) !default;
+			background-color: $bgcolor !important;
+			color:#fff;
+			text-align:center;
+			font-weight:300;
+			letter-spacing:0.025em;
 
-	&.gradient {
-		@include gradient;
-	}
-
-	&.gradient-reverse {
-		@include gradient($brand-darken, $brand-primary);
+			&.lighten { background-color: $bgLight !important; }
+			&.darken { background-color: $bgDark !important; }
+		}
 	}
 }
+
+// Main Gradients
+$profilesBrandGradient: (
+	rexel: #334ba4,
+	hagemeyer: #0068b4,
+	selga: #09795c,
+	regro: #cf000a,
+	storel: #ef7d00,
+	schacke: #0065a8,
+	denmans: #379e32
+);
+@each $profile, $bgcolor in $profilesBrandGradient {
+	##{$profile} {
+		$bgDark: darken($bgcolor, 7.5%) !default;
+		.gradient { @include gradient($bgcolor, $bgDark); }
+		.gradient-reverse { @include gradient($bgDark, $bgcolor); }
+	}
+}
+
+
 
 .counter {
   @include gradient($counter-color, $counter-darken, top);
@@ -310,10 +332,10 @@ $switch-color: $brand-secondary !default;
 	}
 
 	&.bootstrap-switch-focused {
-		border-color: #66afe9;
+		//border-color: #66afe9;
 		outline: 0;
-		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+		//-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	//	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 	}
 
 	&.bootstrap-switch-on,
