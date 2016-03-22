@@ -75,7 +75,7 @@ header {
 .well {
   -webkit-box-shadow: none;
   box-shadow: none;
-  min-height: 115px;
+  min-height: 140px;
   
   &.brand,
   &.brand-2 {
@@ -89,13 +89,14 @@ header {
 }
 
 .off-canvas-hero {
-  
+  text-align:left !important;
   a {
     color: #fff;
     
     h2 {
       font-weight: 300;
       font-size:1.5em;
+      margin-bottom:2px;
     }
 
     &:focus,
@@ -215,7 +216,7 @@ header {
     height:110px;
     
     a {
-      right:-31px;
+      right:-27px;
       -webkit-transform: rotate(-90deg);
       -moz-transform: rotate(-90deg);
       -o-transform: rotate(-90deg);

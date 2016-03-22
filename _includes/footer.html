@@ -6,42 +6,27 @@
 <script src="{{ "/js/bootstrap-switch.js" | prepend: site.baseurl }}"></script>
 
 <script>
-	$('.brand').each(function() {
-		$(this)
-	})
-	var color = '';
-	$('.brand.lighten').each(function() {
-	    var x = $(this).css('backgroundColor');
-	    hexc(x);
-	    $('.small.lighten').each(function() {
-	    	$(this).html(color);
-	    });
+	var color;
+	$('.colorz').each(function() {
+		var x = $(this).css('backgroundColor');
+		hexc(x);
+		$(this).find('.hex').html(color);
 	});
 
-	$('.brand.darken').each(function() {
-	    var x = $(this).css('backgroundColor');
-	    hexc(x);
-	    $('.small.darken').each(function() {
-	    	$(this).html(color);
-	    });
+	$('.colorz-gr').each(function() {
+		var css = $(this).css('background-image');
+
+		var hexStart = css.split('0%')[0].split('to right, ')[1].replace(/\s+/g, '');
+		hexc(hexStart);
+		$(this).find('.hex-start').html(color);
+
+		var hexEnd = css.split('100%')[0].split('25%,')[1].replace(/\s+/g, '');
+		hexc(hexEnd);
+		$(this).find('.hex-end').html(color);
 	});
 
-	var color = '';
-	$('.brand-2.lighten-2').each(function() {
-	    var x = $(this).css('backgroundColor');
-	    hexc(x);
-	    $('.small.lighten-2').each(function() {
-	    	$(this).html(color);
-	    });
-	});
 
-	$('.brand-2.darken-2').each(function() {
-	    var x = $(this).css('backgroundColor');
-	    hexc(x);
-	    $('.small.darken-2').each(function() {
-	    	$(this).html(color);
-	    });
-	});
+
 
 	function hexc(colorval) {
 	    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
