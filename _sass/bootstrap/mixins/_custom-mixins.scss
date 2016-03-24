@@ -1,142 +1,224 @@
-//## Brand Primary Colors
-$brand-lighten:  lighten($brand-primary, 7.5%) !default;
-$brand-darken:  darken($brand-primary, 7.5%) !default;
-$bar-color: $brand-darken !default;
+//## Brand Primary Colors Set
+$BrandColors: (
+	(     rexel, #2a3e87, #ee7803 ),
+	( hagemeyer, #0068b4, #f7941d ),
+	(     regro, #cf000a, #58585a ),
+	(     selga, #09795c, #0096b4 ),
+	(    storel, #ef7d00, #0096b4 ),
+	(   schacke, #0065a8, #03ad6a ),
+	(   denmans, #379e32, #379e32 ),
+	(    gexpro, #000000, #000000 )
+);
+//## Mixin To Build Color Variants
+@mixin colors($brand,$primaryColor,$secondaryColor) {
 
-.bar {background-color: $bar-color;}
+	$brand-primary: $primaryColor !global;
+	$brand-lighten: lighten($primaryColor,7.5%) !global;
+	$brand-darken: darken($primaryColor,7.5%) !global;
 
-// Background Gradient Mixin
+	$brand-secondary: $secondaryColor !global;
+	$brand-secondary-lighten: lighten($secondaryColor,7.5%) !global;
+	$brand-secondary-darken: darken($secondaryColor,7.5%) !global;
+
+	.brand {
+		background-color: $brand-primary !important;
+		color:#fff;
+		text-align:center;
+		font-weight:300;
+		letter-spacing:0.025em;
+
+		&-lighten { background-color: $brand-lighten !important; }
+		&-darken  { background-color: $brand-darken  !important; }
+
+        &-secondary {
+          background-color: $brand-secondary !important;
+          &-lighten { background-color: $brand-secondary-lighten !important; }
+          &-darken  { background-color: $brand-secondary-darken  !important; }
+        }
+	}
+
+}
+//## Background Gradient Mixin
 @mixin gradient($start-color: $brand-primary, $end-color: $brand-darken, $start: left, $end: right, $gradient-type: 1) {
-	@if $start == left {
-		$end: right;
-		$gradient-type: 1;
-	} @else if $start == right {
-		$end: left;
-		$gradient-type: 1;
-	} @else if $start == top {
-		$end: bottom;
-		$gradient-type: 0;
-	} @else if $start == bottom {
-		$end: top;
-		$gradient-type: 0;
-	}
-    background-color: $start-color;
-    background-image: -webkit-gradient(linear, $start, $start, from($start-color), to($end-color));
-    background-image: -webkit-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
-    background-image:    -moz-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
-    background-image:     -ms-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
-    background-image:      -o-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
-    background-image:         linear-gradient(to $end, $start-color 0%, $start-color 25%, $end-color 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(start-colorStr='#{$start-color}', end-colorStr='#{$end-color}',GradientType=#{$gradient-type});
+  @if $start == left {
+    $end: right;
+    $gradient-type: 1;
+  } @else if $start == right {
+    $end: left;
+    $gradient-type: 1;
+  } @else if $start == top {
+    $end: bottom;
+    $gradient-type: 0;
+  } @else if $start == bottom {
+    $end: top;
+    $gradient-type: 0;
+  }
+  background-color: $start-color;
+  background-image: -webkit-gradient(linear, $start, $start, from($start-color), to($end-color));
+  background-image: -webkit-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
+  background-image:    -moz-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
+  background-image:     -ms-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
+  background-image:      -o-linear-gradient($start, $start-color 0%, $start-color 25%, $end-color 100%);
+  background-image:         linear-gradient(to $end, $start-color 0%, $start-color 25%, $end-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(start-colorStr='#{$start-color}', end-colorStr='#{$end-color}',GradientType=#{$gradient-type});
 }
 
-// Brands
-$profilesMain: (
-	rexel: #2a3e87,
-	hagemeyer: #0068b4,
-	selga: #09795c,
-	regro: #cf000a,
-	storel: #ef7d00,
-	schacke: #0065a8,
-	denmans: #379e32
-);
-@each $profile, $bgcolor in $profilesMain {
-	##{$profile} {
-		.brand {
-			$bgDark: darken($bgcolor, 7.5%) !default;
-			$bgLight: lighten($bgcolor, 7.5%) !default;
-			background-color: $bgcolor !important;
-			color:#fff;
-			text-align:center;
-			font-weight:300;
-			letter-spacing:0.025em;
+//## Main Control for Brand Colors
+@each $brand, $primary, $secondary, $tertiary in $BrandColors {
+	##{$brand} {
+		@include colors($brand, $primary, $secondary);
 
-			&.lighten { background-color: $bgLight !important; }
-			&.darken { background-color: $bgDark !important; }
+		// Some global rules
+		$bar-color:                   $brand-darken             !global;
+        $dots-color:                  $brand-secondary          !global;
+        $rx-select:                   $brand-secondary          !global;
+        $switch-color:                $brand-secondary          !global;
+
+        $gradient-start:              $brand-primary            !global;
+        $gradient-end:                $brand-darken             !global;
+
+        $gradient-secondary-start:    $brand-secondary          !global;
+        $gradient-secondary-end:      $brand-secondary-darken   !global;
+
+        $gradient-counter-start:      $gradient-secondary-start !global;
+        $gradient-counter-end:        $gradient-secondary-end   !global;
+
+		// Custom Theme Rules
+		// Rexel
+		@if $brand == rexel {
+			$bar-color:               $brand-darken             !global;
+            $gradient-start:          $brand-lighten            !global;
 		}
-	}
+
+		// Hagemeyer
+		@else if $brand == hagemeyer {
+		}
+
+		// Regro
+		@else if $brand == regro {
+			$bar-color:               $text-color               !global;
+            $dots-color:              $brand-primary            !global;
+            $rx-select:               $brand-primary            !global;
+            $gradient-counter-start:  $gradient-start           !global;
+            $gradient-counter-end:    $gradient-end             !global;
+            $switch-color:            $brand-primary            !global;
+            $link-hover-color:        $brand-primary            !global;
+		}
+
+		// Selga
+		@else if $brand == selga {
+			$bar-color:               $text-color               !global;
+            $dots-color:              $brand-primary            !global;
+            $gradient-counter-start:  $brand-lighten            !global;
+            $gradient-counter-end:    $brand-primary            !global;
+            $link-hover-color:        $brand-secondary          !global;
+		}
+
+		// Storel
+		@else if $brand == storel {
+			$bar-color:               $text-color               !global;
+            $dots-color:              $brand-primary            !global;
+            $gradient-counter-start:  $brand-primary            !global;
+            $gradient-counter-end:    $brand-darken             !global;
+            $link-hover-color:        $brand-secondary          !global;
+		}
+
+		// Schacke
+		@else if $brand == schacke {}
+
+		// Denmans
+		@else if $brand == denmans {}
+
+		// Gexpro
+		@else if $brand == gexpro {}
+
+        // Elements That Accept Themed Parameters
+		.bar {background-color: $bar-color;}
+        .gradient {
+          @include gradient($gradient-start,$gradient-end);
+          &-reverse { @include gradient($gradient-end,$gradient-start); }
+          &-secondary {
+            @include gradient($gradient-secondary-start,$gradient-secondary-end);
+            &-reverse { @include gradient($gradient-secondary-end,$gradient-secondary-start); }
+          }
+        }
+        .counter { @include gradient($gradient-counter-start,$gradient-counter-end,top); }
+        .dots-wrapper ul.dots li.active { background: $dots-color !important; }
+        .rx-select.checked:before { background: $rx-select; }
+        .border-dark { border-color: $brand-darken; }
+        .bootstrap-switch {
+          .bootstrap-switch-handle-on,
+          .bootstrap-switch-handle-off {
+
+            &.bootstrap-switch-primary, &.bootstrap-switch-primary { background: $switch-color; }
+            &.bootstrap-switch-info, &.bootstrap-switch-info { background: $brand-info; }
+            &.bootstrap-switch-success, &.bootstrap-switch-success { background: $brand-success; }
+            &.bootstrap-switch-warning, &.bootstrap-switch-warning { background: $brand-warning; }
+            &.bootstrap-switch-danger, &.bootstrap-switch-danger { background: $brand-danger; }
+            &.bootstrap-switch-default, &.bootstrap-switch-default { background: #ccc; }
+          }
+        }
+        .link-section {
+
+        .well {
+          background-color: #fff;
+        }
+
+        a {
+          // GLOBAL RULES
+          color:$text-color;
+
+          // GLOBAL HOVER RULES
+          &:hover {
+            text-decoration:none;
+            color: $link-hover-color;
+          }
+
+          &.list-link {
+            color:$link-hover-color;
+            &:hover {text-decoration:underline;}
+
+            &.mobile {
+              color: $text-color;
+              &:hover {
+                color:$link-hover-color;
+                text-decoration:none;
+              }
+            }
+          }
+
+          &.primary-link,
+          &.btn-link {
+            font-weight:600;
+            color:$text-color;
+
+            &:hover {
+              color:$link-hover-color;
+              text-decoration:none;
+            }
+
+            &.desktop {
+              color:$link-hover-color;
+
+              &:hover {
+                text-decoration:underline;
+              }
+            }
+          }
+
+          &.inline-link {
+            color:$link-hover-color;
+            font-weight:600;
+            &:hover {
+              text-decoration:underline;
+            }
+          }
+        }
+      }
+    }
 }
 
-// Main Gradients
-$profilesBrandGradient: (
-	rexel: #334ba4,
-	hagemeyer: #0068b4,
-	selga: #09795c,
-	regro: #cf000a,
-	storel: #ef7d00,
-	schacke: #0065a8,
-	denmans: #379e32
-);
-@each $profile, $bgcolor in $profilesBrandGradient {
-	##{$profile} {
-		$bgDark: darken($bgcolor, 7.5%) !default;
-		.gradient { @include gradient($bgcolor, $bgDark); }
-		.gradient-reverse { @include gradient($bgDark, $bgcolor); }
-	}
-}
-
-// Counter Background
-$profilesCounter: (
-	rexel: #ee7803,
-	hagemeyer: #f7941d,
-	selga: #0c9d77,
-	regro: #f5000c,
-	storel: #ef7d00,
-	schacke: #03ad6a,
-	denmans: #379e32
-);
-@each $profile, $bgcolor in $profilesCounter {
-	##{$profile} {
-		$counterDark: darken($bgcolor, 7.5%) !default;
-		.counter { @include gradient($bgcolor, $counterDark, top); }
-	}
-}
-
-// Secondary Brand Gradient
-$brand2-lighten:  lighten($brand-secondary, 7.5%) !default;
-$brand2-darken:  darken($brand-secondary, 7.5%) !default;
-.brand-2 {
-	background-color: $brand-secondary !important;
-	color:#fff;
-	text-align:center;
-	font-weight:300;
-	letter-spacing:0.025em;
-	
-	&.lighten-2 {
-		background-color: $brand2-lighten !important;
-	}
-	
-	&.darken-2 {
-		background-color: $brand2-darken !important;
-	}
-
-	&.gradient-2 {
-		@include gradient($brand-secondary, $brand2-darken);
-	}
-
-	&.gradient-vertical-2 {
-		@include gradient($brand-secondary, $brand2-darken,top);
-	}
-}
-
-.white-gradient {
-	@include gradient(#fff, #f1f1f1, top);
-}
-
-.border-dark {
-	border-color: $brand-darken;
-}
-
-$rx-select: $brand-secondary !default;
-.rx-select {
-	&.checked:before {
-		background: $rx-select;
-	}
-}
-
-
-// BEGIN BOOTSTRAP SWITCH
-$switch-color: $brand-secondary !default;
+.white-gradient { @include gradient(#fff, #f1f1f1, top); }
 .bootstrap-switch {
 	display: inline-block;
 	direction: ltr;
@@ -186,35 +268,7 @@ $switch-color: $brand-secondary !default;
 		z-index: 1;
 		color: #fff;
 
-		&.bootstrap-switch-primary,
-		&.bootstrap-switch-primary {
-			background: $switch-color;
-		}
-		
-		&.bootstrap-switch-info,
-		&.bootstrap-switch-info {
-			background: $brand-info;
-		}
 
-		&.bootstrap-switch-success,
-		&.bootstrap-switch-success {
-			background: $brand-success;
-		}
-
-		&.bootstrap-switch-warning,
-		&.bootstrap-switch-warning {
-			background: $brand-warning;
-		}
-
-		&.bootstrap-switch-danger,
-		&.bootstrap-switch-danger {
-			background: $brand-danger;
-		}
-
-		&.bootstrap-switch-default,
-		&.bootstrap-switch-default {
-			background: #ccc;
-		}
 	}
 
 	.bootstrap-switch-label {
@@ -360,69 +414,7 @@ $switch-color: $brand-secondary !default;
 		}
 	}
 }
-// BOOTSTRAP SWITCH
 
-.link-section {
-$normal: #58585a;
-$linkcolor: $link-hover-color !default;
 
-	.well {
-		background-color: #fff;
-	}
-	
-	a {
-    // GLOBAL RULES
-    color:$normal;
-    
-    // GLOBAL HOVER RULES
-    &:hover {
-      text-decoration:none;
-      color: $linkcolor;
-    }
-    
-    &.list-link {
-      color:$linkcolor;
-      &:hover {text-decoration:underline;}
 
-      &.mobile {
-      	color: $normal;
-      	&:hover {
-      		color:$linkcolor;
-      		text-decoration:none;
-      	}
-      }
-    }
-    
-    &.primary-link,
-    &.btn-link {
-      font-weight:600;
-      color:$normal;
-       
-      &:hover {
-        color:$linkcolor;
-        text-decoration:none;
-      }
 
-      &.desktop {
-      	color:$linkcolor;
-
-      	&:hover {
-      		text-decoration:underline;
-      	}
-      }
-    }
-    
-    &.inline-link {
-      color:$linkcolor;
-      font-weight:600;
-      &:hover {
-        text-decoration:underline;
-      }
-    }
-  }
-}
-
-$dots-color: $brand-secondary !default;
-.dots-wrapper ul.dots li.active {
-  background: $dots-color !important;
-}

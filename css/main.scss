@@ -3,16 +3,6 @@
 ---
 @charset "utf-8";
 
-//Variables
-{% include color_vars.scss %}
-$brand-primary:   $brand-regro-primary   !default;
-$brand-secondary: $brand-regro-secondary !default;
-$linkcolor: $brand-regro-primary !default;
-$bar-color: $brand-regro-secondary !default;
-$rx-select: $brand-regro-primary !default;
-$switch-color: $brand-regro-primary !default;
-$dots-color: $brand-regro-primary !default;
-
 // 'open sans' & material icon font from google fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,300italic,600italic);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
@@ -21,4 +11,3 @@ $dots-color: $brand-regro-primary !default;
 @import
         "bootstrap"
 ;
-

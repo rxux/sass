@@ -37,8 +37,6 @@ header {
     }
   }
 }
-
-
 .cart {
   position:relative; 
   display: inline-block; 
@@ -54,7 +52,6 @@ header {
   }
 
 }
-
 .counter {
   padding: 0 5px;
   position: absolute;
@@ -71,15 +68,19 @@ header {
   line-height: 20px;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
 }
-
 .well {
   -webkit-box-shadow: none;
   box-shadow: none;
-  min-height: 140px;
-  
-  &.brand,
-  &.brand-2 {
+  min-height: 150px;
+  border-width:1px;
+}
+.color-scales {
+  .well {
     border-width: 0;
+    text-align:center;
+    color:#fff;
+    height: 100px;
+    line-height:100px;
 
     code {
       color:#fff;
@@ -87,7 +88,6 @@ header {
     }
   }
 }
-
 .off-canvas-hero {
   text-align:left !important;
   a {
@@ -109,7 +109,6 @@ header {
     }
   }
 }
-
 // DESKTOP HEADER BAR
 img.logo {
   max-width:200px;
@@ -118,7 +117,6 @@ img.logo {
   margin-left:10px;
   margin-bottom:15px;
 }
-
 .white-well {
   background-color: #fff;
   padding-top:21px;
@@ -128,7 +126,6 @@ img.logo {
   width:960px;
   margin:0 auto;
 }
-
 .bar-wrapper {
   background-color: #fff;
   border-width: 0;
@@ -254,18 +251,16 @@ img.logo {
     right: -9px;
   }
 }
-
 // END DESKTOP HEADER BAR
 
 // LIVE HELP BUTTON
 .live-help-wrapper {
-
   .well {
     background-color: #fff;
     height:110px;
     
     a {
-      right:-27px;
+      right:-31px;
       -webkit-transform: rotate(-90deg);
       -moz-transform: rotate(-90deg);
       -o-transform: rotate(-90deg);
@@ -285,6 +280,9 @@ img.logo {
       border-width: 1px;
       border-style: solid;
       border-bottom-width: 0px;
+      color:#fff;
+      font-weight:300;
+
       
       &:hover,
       &.hover,
