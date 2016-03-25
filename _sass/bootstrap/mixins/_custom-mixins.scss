@@ -62,6 +62,63 @@ $BrandColors: (
   background-image:         linear-gradient(to $end, $start-color 0%, $start-color 25%, $end-color 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(start-colorStr='#{$start-color}', end-colorStr='#{$end-color}',GradientType=#{$gradient-type});
 }
+//## Primary Button Variants
+@mixin primary-button-variant($text, $bg, $dark) {
+  color: $text;
+  @include gradient($bg, $dark, top);
+  border-color: $dark;
+
+  &:focus,
+  &.focus {
+    color: $text;
+    background-color: $bg;
+    border-color: $dark;
+    background-image: none;
+  }
+  &:hover {
+    color: $text;
+    background-color: $bg;
+    border-color: $dark;
+    background-image: none;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $text;
+    background-color: $bg;
+    border-color: $dark;
+    background-image: none;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $text;
+      background-color: $dark;
+      border-color: $dark;
+      background-image: none;
+    }
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      @include gradient($bg, $dark, top);
+      border-color: $dark;
+    }
+  }
+
+  //.badge {
+  //  color: $background;
+  //  background-color: $color;
+  //}
+}
 
 //## Main Control for Brand Colors
 @each $brand, $primary, $secondary, $tertiary in $BrandColors {
@@ -83,11 +140,17 @@ $BrandColors: (
       $gradient-counter-start: $gradient-secondary-start !global;
       $gradient-counter-end: $gradient-secondary-end !global;
 
+      $primary-button-background: $gradient-start !global;
+      $primary-button-darken: $gradient-end !global;
+
       // Custom Theme Rules
       // Rexel
       @if $brand == rexel {
         $bar-color: $brand-primary !global;
         $gradient-start: $brand-lighten !global;
+        $gradient-end: $brand-primary !global;
+        $primary-button-background: $brand-lighten !global;
+        $primary-button-darken: $brand-primary !global;
       }
 
         // Hagemeyer
@@ -112,6 +175,8 @@ $BrandColors: (
         $gradient-counter-start: $brand-lighten !global;
         $gradient-counter-end: $brand-primary !global;
         $link-hover-color: $brand-secondary !global;
+        $primary-button-background: $brand-lighten !global;
+        $primary-button-darken: $brand-primary !global;
       }
 
         // Storel
@@ -121,6 +186,8 @@ $BrandColors: (
         $gradient-counter-start: $brand-primary !global;
         $gradient-counter-end: $brand-darken !global;
         $link-hover-color: $brand-secondary !global;
+        $primary-button-background: $brand-secondary !global;
+        $primary-button-darken: $brand-secondary-darken !global;
       }
 
         // Schacke
@@ -149,9 +216,51 @@ $BrandColors: (
           }
         }
       }
-      .counter { @include gradient($gradient-counter-start, $gradient-counter-end, top); }
+      .counter {
+        padding: 0 5px;
+        position: absolute;
+        font-size: 9px;
+        border-radius: 3px;
+        cursor: default;
+        height: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 9pt;
+        color: #fff;
+        font-weight: 600;
+        line-height: 20px;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+        @include gradient($gradient-counter-start, $gradient-counter-end, top);
+      }
       .dots-wrapper ul.dots li.active { background: $dots-color !important; }
-      .rx-select.checked:before { background: $rx-select; }
+      .rx-select {
+        height: 20px;
+        width: 20px;
+        background: #fff;
+        display: inline-block;
+        border: 2px solid #9E9E9E;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        float: left;
+        position: relative;
+
+        &.checked {
+          &:before {
+            position: absolute;
+            right: 3px;
+            left: 3px;
+            top: 3px;
+            bottom: 3px;
+            content: "";
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            background: $rx-select;
+          }
+        }
+      }
       .border-dark { border-color: $brand-darken; }
       .bootstrap-switch {
         .bootstrap-switch-handle-on,
@@ -239,21 +348,12 @@ $BrandColors: (
           }
         }
       }
-      .btn-link {
-        &.disabled {
-          color: $text-color;
-          &:hover,
-          &:active,
-          &:focus,
-          &.hover,
-          &.active,
-          &.focus {
-            color: $text-color !important;
-          }
-        }
+      .btn-primary {
+        @include primary-button-variant($btn-primary-color, $primary-button-background, $primary-button-darken);
       }
     }
 }
+
 
 .white-gradient { @include gradient(#fff, #f1f1f1, top); }
 .bootstrap-switch {

@@ -73,26 +73,6 @@ a.btn {
   @include white-button-variant($btn-default-bg);
 }
 
-$profilesBtn: (
-  rexel: #334ba4,
-  hagemeyer: #0068b4,
-  selga: #0c9d77,
-  regro: #cf000a,
-  storel: #0096b4,
-  schacke: #0065a8,
-  denmans: #379e32
-);
-@each $profile, $bgcolor in $profilesBtn {
-  ##{$profile} {
-    .btn-primary {
-      $button-color: $bgcolor !default;
-      $button-darken: darken($bgcolor, 7.5%) !default;
-      @include primary-button-variant($btn-primary-color, $button-color, $button-darken);
-    }
-  }
-}
-
-
 // Success appears as green
 .btn-success {
   @include indicator-button-variant($btn-success-color, $btn-success-bg);
@@ -109,7 +89,6 @@ $profilesBtn: (
 .btn-danger {
   @include indicator-button-variant($btn-danger-color, $btn-danger-bg);
 }
-
 
 // Link buttons
 // -------------------------
@@ -145,7 +124,7 @@ $profilesBtn: (
   fieldset[disabled] & {
     &:hover,
     &:focus {
-      color: $btn-link-disabled-color;
+      color: $text-color;
       text-decoration: none;
     }
   }

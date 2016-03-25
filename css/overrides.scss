@@ -26,6 +26,7 @@ header {
   .navbar-brand {
     font-weight: 300;
     letter-spacing: 0.05em;
+    color:#fff !important;
   }
 
   .i-wrap { 
@@ -46,27 +47,12 @@ header {
     font-size: 2em;
   }
 
+  // JUST TO POSITION THE COUNTER IN THE CART
   .counter {
     right:-14px;
     top:0;
   }
 
-}
-.counter {
-  padding: 0 5px;
-  position: absolute;
-  font-size: 9px;
-  border-radius: 3px;
-  cursor: default;
-  height: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 9pt;
-  color: #fff;
-  font-weight: 600;
-  line-height: 20px;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
 }
 .well {
   -webkit-box-shadow: none;
@@ -112,7 +98,6 @@ header {
     }
   }
 }
-// DESKTOP HEADER BAR
 img.logo {
   max-width:200px;
   display:block;
@@ -254,9 +239,6 @@ img.logo {
     right: -9px;
   }
 }
-// END DESKTOP HEADER BAR
-
-// LIVE HELP BUTTON
 .live-help-wrapper {
   .well {
     background-color: #fff;
@@ -297,47 +279,14 @@ img.logo {
     }
   }
 }
-// END LIVE HELP BUTTON
-
-// RADIO BUTTONS
 .rx-select-wrapper {
-
   label {
     margin-left: 6px;
   }
-
-  .rx-select {
-    height: 20px;
-    width: 20px;
-    background: #fff;
-    display: inline-block;
-    border: 2px solid #9E9E9E;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    float: left;
-    position: relative;
-
-    &.checked:before {
-      position: absolute;
-      right: 3px;
-      left: 3px;
-      top: 3px;
-      bottom: 3px;
-      content: "";
-      border-radius: 50%;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-    }
-  }
 }
-// END RADIO BUTTONS
-
 .remember-me-label {
   margin-left: 15px;
 }
-
-// DOTS
 .dots-wrapper {
   background-color:#fff;
   ul.dots {
