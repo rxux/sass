@@ -86,7 +86,7 @@ $BrandColors: (
 		// Custom Theme Rules
 		// Rexel
 		@if $brand == rexel {
-			$bar-color:               $brand-darken             !global;
+			$bar-color:               $brand-primary             !global;
             $gradient-start:          $brand-lighten            !global;
 		}
 
