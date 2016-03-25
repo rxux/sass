@@ -91,7 +91,7 @@ header {
 .off-canvas-hero {
   text-align:left !important;
   a {
-    color: #fff;
+    color: #fff !important;
     font-weight:300;
     letter-spacing:0.025em;
     font-size:12px;
@@ -283,7 +283,7 @@ img.logo {
       border-width: 1px;
       border-style: solid;
       border-bottom-width: 0px;
-      color:#fff;
+      color:#fff !important;
       font-weight:300;
 
       &:hover,
@@ -362,7 +362,11 @@ img.logo {
     }
   }
 }
-
+.link-section {
+  .well {
+    background-color: #fff;
+  }
+}
 
 
 
