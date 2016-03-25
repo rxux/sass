@@ -295,7 +295,6 @@ $BrandColors: (
           text-decoration: none;
           color: $link-hover-color;
         }
-
         &.list-link {
           color: $link-hover-color;
           &:hover {
@@ -310,7 +309,18 @@ $BrandColors: (
             }
           }
         }
-
+        &.caret-link {
+          position: relative;
+          display: inline;
+          left: -15px;
+          i {
+            position: absolute;
+            display: inline-block;
+            width: 15px;
+            right: -14px;
+            font-size: 1.5em;
+          }
+        }
         &.primary-link,
         &.btn-link {
           font-weight: 600;
@@ -339,7 +349,6 @@ $BrandColors: (
             }
           }
         }
-
         &.inline-link {
           color: $link-hover-color;
           font-weight: 600;
