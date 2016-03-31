@@ -68,19 +68,19 @@ $BrandColors: (
   @include gradient($bg, $dark, top);
   border-color: $dark;
 
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle,
   &:focus,
-  &.focus {
+  &.focus,
+  &:hover,
+  &.hover {
     color: $text;
     background-color: $bg;
     border-color: $dark;
     background-image: none;
   }
-  &:hover {
-    color: $text;
-    background-color: $bg;
-    border-color: $dark;
-    background-image: none;
-  }
+
   &:active,
   &.active,
   .open > &.dropdown-toggle {
@@ -90,6 +90,7 @@ $BrandColors: (
     background-image: none;
 
     &:hover,
+    &.hover,
     &:focus,
     &.focus {
       color: $text;
@@ -98,11 +99,7 @@ $BrandColors: (
       background-image: none;
     }
   }
-  &:active,
-  &.active,
-  .open > &.dropdown-toggle {
-    background-image: none;
-  }
+
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
@@ -113,6 +110,42 @@ $BrandColors: (
       border-color: $dark;
     }
   }
+
+  &.btn-force {
+    &-active,
+    &-hover,
+    &-focus,
+    &-pressed {
+      color: $text;
+      background-color: $bg;
+      border-color: $dark;
+      background-image: none;
+
+      &.active,
+      &:active,
+      &.hover,
+      &:hover,
+      &.focus,
+      &:focus {
+        color: $text;
+        background-color: $bg;
+        border-color: $dark;
+        background-image: none;
+      }
+    }
+    &-pressed {
+      background-color: $dark !important;
+      &.active,
+      &:active,
+      &.hover,
+      &:hover,
+      &.focus,
+      &:focus {
+        background-color: $dark !important;
+      }
+    }
+  }
+
 
   //.badge {
   //  color: $background;
@@ -561,6 +594,24 @@ $BrandColors: (
 	}
 }
 
+i {
+ &.material-icons  {
+   &.icon-success  { color: $brand-success; }
+   &.icon-warning  { color: $brand-warning; }
+   &.icon-info {
+     color: $brand-info;
+     &-fill {
+       color: $brand-info;
+     }
+   }
+   &.icon-error {
+     color: $brand-danger;
+     &-disabled {
+       color: $brand-danger;
+     }
+   }
+ }
+}
 
 
 
